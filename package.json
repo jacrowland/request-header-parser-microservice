@@ -1,0 +1,19 @@
+{
+  "name": "Request Header Parser Microservice",
+  "version": "1.0.0",
+  "description": "Request Header Parser Microservice API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "Express",
+    "node",
+    "API"
+  ],
+  "author": "Jacob Rowland",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
