@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const PORT = 8080;
 
+app.enable("trust proxy");
+
 const server = app.listen(PORT, () => {
     let host = server.address().address;
     let port = server.address().port;
@@ -19,8 +21,7 @@ app.use((req, res, next) => {
   });
 
 app.get('/api/whoami', (req, res) => {
-    let ipAddress = req.header('X-Forwarded-For');
     let acceptedLanguage = req.header('Accept-Language');
     let userAgent = req.header("user-agent");
-    res.status(200).json({ip: ipAddress, language: acceptedLanguage, software: userAgent})
+    res.status(200).json({ipaddress: req.ip, language: acceptedLanguage, software: userAgent})
 });
